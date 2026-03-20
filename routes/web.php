@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test-redis', function () {
+    Redis::set('nama', 'Budi');
+    return Redis::get('nama');
+});
