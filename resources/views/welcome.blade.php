@@ -7,8 +7,23 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        <!-- Use only local assets or ensure Subresource Integrity (SRI) is set for remote resources.
+             Removing remote font fetch to avoid unvalidated remote artifact execution. -->
+        <style>
+            @font-face {
+                font-family: 'Figtree';
+                font-style: normal;
+                font-weight: 400;
+                /* host local font files in public/fonts if needed */
+                src: local('Figtree'), local('Figtree-Regular');
+            }
+            @font-face {
+                font-family: 'Figtree';
+                font-style: normal;
+                font-weight: 600;
+                src: local('Figtree Semibold'), local('Figtree-Bold');
+            }
+        </style>
 
         <!-- Styles -->
         <style>
