@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
 
-    'allowed_origins' => explode(',', env('CORS_ALLOWED_ORIGINS', 'http://localhost,https://your-production-domain.com')),
+    'allowed_origins' => array_filter(array_map('trim', explode(',', env('CORS_ALLOWED_ORIGINS', 'https://localhost,https://your-production-domain.com'))), fn ($origin) => str_starts_with($origin, 'https://')),
 
     'allowed_origins_patterns' => [],
 
